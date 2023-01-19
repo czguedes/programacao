@@ -10,13 +10,77 @@ b. Se o IMC estiver acima de 24,99 o status a ser mostrado será
 c. Se o IMC for igual ou maior que 18,5 e igual ou menor que
 24,99, o status a ser mostrado será “Você está dentro da faixa
 de peso ideal”.
+
+--variaveis
+
+const peso
+const altura
+const imc = peso/(altura * altura)
+
+--passos
+
+ler peso e altura
+calcular imc
+mostrar resultado
+    imc < 18.5 = “Você está abaixo da faixa de peso ideal”
+    imc > 24.9 = “Você está acima da faixa de peso ideal”
+    imc >= 18.5 && imc <= 24.9 = “Você está dentro da faixa de peso ideal”
 */
+
+const pesoImc = 85
+const altura = 1.83
+const imc = pesoImc/(altura**2)
+
+console.log(imc)
+
+if(imc >= 18.5 && imc <= 24.9){
+    console.log('Você está dentro da faixa de peso ideal')
+} else if(imc < 18.5){
+    console.log('Você está abaixo da faixa de peso ideal')
+} else if(imc > 24.9){
+    console.log('“Você está acima da faixa de peso ideal”')
+} else{console.log('Valores Incomuns')}
+
+console.log('FIM DO EXERCÍCIO')
 
 /*
 2. Escreva um algoritmo que solicite 2 números e uma operação
 matemática. O algoritmo deve realizar o cálculo com os 2 números
 digitados conforme a operação informada.
+
+--variaveis
+const num1
+const num2
+const calc = '+', '-', '*', '/'
+
+--passos
+
+receber valores de num 1 e num2
+receber valor de calc e resolver
+imprimir
 */
+
+const num1 = 10
+const num2 = 48
+const calc = '/'
+
+if (calc === '+'){
+    const soma = num1 + num2
+    console.log(soma)
+} else if(calc === '-'){
+    const sub = num1 - num2
+    console.log(sub)
+} else if(calc === '*'){
+    const mult = num1 * num2
+    console.log(mult);
+} else if(calc === '/'){
+    const div = num1 / num2
+    console.log(div);
+} else {
+    console.log('ERRO')
+}
+
+console.log('FIM DO EXERCÍCIO')
 
 /*
 3. Faça um algoritmo que simule um caixa eletrônico. Nesse algoritmo
