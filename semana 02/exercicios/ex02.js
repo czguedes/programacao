@@ -22,7 +22,7 @@ const num1 = 10
 const num2 = 3
 const soma = num1 + num2
 
-document.write(`O resultado da soma de ${num1} e ${num2} é ${soma}`)
+document.write(`<p>O resultado da soma de ${num1} e ${num2} é ${soma}</p>`)
 
 /*
 3. Crie três variáveis, na primeira variável coloque o total de uma
@@ -38,7 +38,7 @@ const compra = 149.90
 const parcelas = 2
 const valorParcela = compra / parcelas
 
-document.write(`O valor total da compra foi R$${compra}.`, `Forma de pagamento: ${parcelas}x de R$${valorParcela}.`)
+document.write(`<p>O valor total da compra foi R$${compra}.</p>`, `<p>Forma de pagamento: ${parcelas}x de R$${valorParcela}.</p>`)
 
 /*
 4. Crie duas variáveis. Na primeira coloque um total de minutos e
@@ -49,7 +49,9 @@ informação: "_ minutos equivale à _ segundos!"
 */
 
 const minutos = 120
-const convSeg = 
+const convSeg = minutos * 60
+
+document.write(`<p>${minutos} minutos equivalem a ${convSeg} segundos!</p>`)
 
 /*
 5. Crie cinco variáveis. Na primeira armazene o nome de um aluno. Na
@@ -58,3 +60,13 @@ Calcule a média das notas e armazene na quinta variável criada.
 Apresente no documento html a seguinte informação:
 "O aluno _____ ficou com média _,_"
 */
+
+const aluno = 'Caio'
+
+const nota1 = 7
+const nota2 = 3
+const nota3 = 9
+
+const media = (nota1 + nota2 + nota3)/3
+
+document.write(`<p>O aluno ${aluno} ficou com média ${media}.</p>`)
