@@ -11,14 +11,23 @@ b. A maior altura do grupo;
 -repetir até terminar os dados
 */
 
-// const alturas = [1.70, 1.85, 1.35, 1.24, 1.55, 1.76, 1.90, 1.42, 1.33, 1.50, 1.41, 1.37, 1.72, 1.79, 1.67];
+const alturas = [1.70, 1.85, 1.35, 1.24, 1.55, 1.76, 1.90, 1.42, 1.33, 1.50, 1.41, 1.37, 1.72, 1.79, 1.67];
 
-// let index = 0;
-// let maiorAltura;
-// let menorAltura;
+let index = 0;
+let maiorAltura = alturas[index];
+let menorAltura = alturas[index]
 
-// console.log(alturas[0])
-// console.log(alturas)
+while (index < 15) {
+    if (alturas[index] > maiorAltura) {
+        maiorAltura = alturas[index]
+    }
+    if (alturas[index] < menorAltura) {
+        menorAltura = alturas[index]
+    }
+    index++
+}
+
+console.log(`A menor altura do grupo é ${menorAltura}m e a maior é ${maiorAltura}m.`)
 
 console.log('-------------FIM------------------')
 /*
