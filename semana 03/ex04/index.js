@@ -47,7 +47,7 @@ while (alturaLucas < alturaPedro) {
     alturaLucas += 0.03
     alturaPedro += 0.02
     anos++
-    console.log(`Altura de Pedro: ${alturaPedro.toFixed(2)}m; altura de Lucas: ${alturaLucas.toFixed(2)}m; Ano ${anos};`)
+    // console.log(`Altura de Pedro: ${alturaPedro.toFixed(2)}m; altura de Lucas: ${alturaLucas.toFixed(2)}m; Ano ${anos};`)
 }
 
 console.log(`Foram ${anos - 1} anos até Lucas e Pedro terem a mesma altura e ${anos} anos até Lucas ser maior que Pedro.`)
