@@ -11,23 +11,23 @@ b. A maior altura do grupo;
 -repetir até terminar os dados
 */
 
-const alturas = [1.70, 1.85, 1.35, 1.24, 1.55, 1.76, 1.90, 1.42, 1.33, 1.50, 1.41, 1.37, 1.72, 1.79, 1.67];
+// const alturas = [1.70, 1.85, 1.35, 1.24, 1.55, 1.76, 1.90, 1.42, 1.33, 1.50, 1.41, 1.37, 1.72, 1.79, 1.67];
 
-let index = 0;
-let maiorAltura = alturas[index];
-let menorAltura = alturas[index]
+// let index = 0;
+// let maiorAltura = alturas[index];
+// let menorAltura = alturas[index]
 
-while (index < 15) {
-    if (alturas[index] > maiorAltura) {
-        maiorAltura = alturas[index]
-    }
-    if (alturas[index] < menorAltura) {
-        menorAltura = alturas[index]
-    }
-    index++
-}
+// while (index < 15) {
+//     if (alturas[index] > maiorAltura) {
+//         maiorAltura = alturas[index]
+//     }
+//     if (alturas[index] < menorAltura) {
+//         menorAltura = alturas[index]
+//     }
+//     index++
+// }
 
-console.log(`A menor altura do grupo é ${menorAltura}m e a maior é ${maiorAltura}m.`)
+// console.log(`A menor altura do grupo é ${menorAltura}m e a maior é ${maiorAltura}m.`)
 
 console.log('-------------FIM------------------')
 /*
@@ -39,18 +39,18 @@ a. Lucas e Pedro tenham o mesmo tamanho;
 b. Lucas seja maior que Pedro.
 
 */
-let alturaPedro = 1.50
-let alturaLucas = 1.10
-let anos = 0
+// let alturaPedro = 1.50
+// let alturaLucas = 1.10
+// let anos = 0
 
-while (alturaLucas < alturaPedro) {
-    alturaLucas += 0.03
-    alturaPedro += 0.02
-    anos++
-    // console.log(`Altura de Pedro: ${alturaPedro.toFixed(2)}m; altura de Lucas: ${alturaLucas.toFixed(2)}m; Ano ${anos};`)
-}
+// while (alturaLucas < alturaPedro) {
+//     alturaLucas += 0.03
+//     alturaPedro += 0.02
+//     anos++
+//     // console.log(`Altura de Pedro: ${alturaPedro.toFixed(2)}m; altura de Lucas: ${alturaLucas.toFixed(2)}m; Ano ${anos};`)
+// }
 
-console.log(`Foram ${anos - 1} anos até Lucas e Pedro terem a mesma altura e ${anos} anos até Lucas ser maior que Pedro.`)
+// console.log(`Foram ${anos - 1} anos até Lucas e Pedro terem a mesma altura e ${anos} anos até Lucas ser maior que Pedro.`)
 
 console.log('-------------FIM------------------')
 
@@ -63,7 +63,27 @@ quantidade de iterações também (i).
 2 * 2 = 4
 3 * 2 = 6
 ...
+
+---
+receber o valor da tabuada
+receber o numero de iterações
+iniciar em 0
+
+calcular a tabuada:
+    iteracao * valor da tabuada = resultado
+    repetir até o valor da iteração final (contador)
+
+mostrar tabuada completa (console.log resultado)
+
 */
+// let multValor = Number(prompt('Digite o valor da tabuada:'))
+// let iteracao = Number(prompt('Digite o intervalo final para a tabuada:'))
+
+
+// for(let index = 0; index <= iteracao; index++){
+//     console.log(`${index} * ${multValor} = ${index * multValor}`)
+
+// }
 console.log('-------------FIM------------------')
 /*
 4. Escreva um algoritmo que percorra os números inteiros entre 1 e 250
@@ -76,16 +96,20 @@ mostrar números multiplos de 3 e 5
 
 */
 
-let contador = 1
-let multTres
-let multCinco
+// let contador = 1
+// let mult3 = 0
+// let mult5 = 0
 
-while (contador <= 250) {
-    if (contador % 3 == 0) {
-        
-    }
-    contador++
-}
+// while (contador <= 250) {
+//     if (contador % 3 == 0) {
+//         mult3++
+//     }
+//     if (contador % 5 == 0) {
+//         mult5++
+//     }
+//     contador++
+// }
+// console.log(`No intervalo de 1 a 250 existem ${mult3} múltiplos de 3 e ${mult5} múltiplos de 5.`)
 
 console.log('-------------FIM------------------')
 /*
@@ -95,13 +119,31 @@ digitado:
 Ex: Digite um valor: 9
 Contagem: 0, 1, 2, 3, 4, 5, 6, 7, 8, 9, FIM!
 */
+// const valorFinal = Number(prompt(`Insira um valor:`))
+
+// for (let index = 0; index <= valorFinal; index++) {
+//     console.log(`${index}`)
+    
+// }
+
 console.log('-------------FIM------------------')
 /*
 6. Desenvolva um algoritmo que mostre uma contagem regressiva de
 30 até 1, marcando os números que forem primos, exatamente
 como mostrado abaixo:
 30 [29] 28 27 26 25 24 [23] 22 21 20 [19] 18 [17] 16...
+
+numero primo => só é divisível (resto 0) por 1 e por ele mesmo
+
+fazer um lista dessa contagem (30 até 1)
+provar a condicaoPrimo de cada um deles
+    condicaoPrimo = n % n-1 == 0 
+    se condicaoPrimo = false => não conta divisor
+    se condicaoPrimo = true => conta divisor
+se n tiver divisor == 2 => primo, logo imprime ['']
+se n tiver divisor != 2 => não-primo, logo imprime ''
 */
+
 console.log('-------------FIM------------------')
 /*
 7. Desenvolva um algoritmo que leia 10 números, calcule e escreva a
@@ -109,4 +151,12 @@ média aritmética dos valores lidos, a quantidade de valores
 positivos, a quantidade de valores negativos e o percentual de
 valores negativos e positivos.
 */
+
+let contador = 0
+do {
+    let valorDigitado = Number(prompt('Digite um valor numérico: '))
+
+    contador++
+} while (contador <= 10);
+
 console.log('-------------FIM------------------')
