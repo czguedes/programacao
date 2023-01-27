@@ -1,9 +1,8 @@
 //ILHA GROWDEV
 
-let retirada = true;
 let valorSaque = Number(
   prompt(
-    "Digite o Valor Desejado, O nÃºmero deve ser um valor Positivo e Inteiro."
+    "Digite o valor desejado; o número deve ser um valor Positivo e Inteiro."
   )
 );
 
