@@ -128,7 +128,8 @@ if (salario < 1903.98) {
 */
 
 //Q09
-let valor = Number(prompt('Insira um valor maior que zero: '))
+/*
+let valor = Number(prompt('Insira um valor: '))
 let divValor = 0
 
 for(let i = 1; i <= valor; i++) {
@@ -144,3 +145,188 @@ if (divValor == 2) {
 } else {
     document.write(`O número ${valor} NÃO é PRIMO!`)
 }
+*/
+
+//Q10
+
+/*
+let sexo = Number(prompt('Qual seu sexo? 1=Feminino; 2=Masculino'))
+let pesoIdeal
+
+if (sexo === 1 || sexo === 2) {
+    let altura = Number(prompt('Qual sua altura?'))
+
+    switch (sexo) {
+        case 1:
+            pesoIdeal = (62.1 * altura) - 44.7
+            document.write(`Seu peso ideal é ${pesoIdeal.toFixed(2)} kg`)
+            break;
+    
+        case 2:
+            pesoIdeal = (72.7 * altura) - 58
+            document.write(`Seu peso ideal é ${pesoIdeal.toFixed(2)} kg`)
+            break;
+    
+        default:
+            document.write('Entrada inválida')
+            break;
+    }    
+} else {
+    document.write('Entrada inválida')
+}
+*/
+
+//Q11
+/*
+let turno = prompt('Em que turno você estuda? M = Matutino, V = Vespertino, N = Noturno')
+
+switch (turno) {
+    case 'M':
+        document.write('Bom dia!')
+        break;
+    case 'V':
+        document.write('Boa tarde!')
+        break;
+    case 'N':
+        document.write('Boa noite!')
+        break;
+    default:
+        document.write('Valor Inválido')
+        break;
+}
+*/
+
+//Q12
+/*
+let idade = Number(prompt('Qual sua idade?'))
+
+if(idade < 18 || idade > 67) {
+    document.write ('Você não pode doar sangue!')
+} else {
+    document.write ('Você pode doar sangue!')
+}
+*/
+
+//Q13
+/*
+let numero = Number(prompt('Digite um número: '))
+let imprime = " "
+
+for(i = 0; i <= numero; i++) {
+
+    if(i % 2 !== 0) {
+        imprime += ` ${i} `
+    }
+}
+document.write(imprime)
+*/
+
+//Q14
+/*
+let valor = Number(prompt('Digite um número: '))
+let soma = 0
+
+while(soma <= 500) {
+    soma += valor * 3
+}
+
+console.log(`O último valor foi ${soma - (valor * 3)}.`);
+*/
+
+//Q15
+
+/*
+let ladoA = Number(prompt('Digite o valor do lado A: '))
+let ladoB = Number(prompt('Digite o valor do lado B: '))
+let ladoC = Number(prompt('Digite o valor do lado C: '))
+
+let valorAB = ladoA + ladoB
+let valorAC = ladoA + ladoC
+let valorBC = ladoB + ladoC
+
+if(valorAB > ladoC && valorAC > ladoB && valorBC > ladoA) {
+    
+    if(ladoA !== ladoB && ladoB !== ladoC){
+        console.log(`Os lados formam um triângulo ESCALENO!`)
+    } else if(ladoA === ladoB && ladoB === ladoC) {
+        console.log(`Os lados formam um triângulo EQUILÁTERO!`)
+    } else{
+        console.log(`Os lados formam um triângulo ISÓSCELES!`)
+    }
+    
+} else {
+    console.log('Os lados não formam um triângulo!')
+}
+
+console.log(ladoA, ladoB, ladoC)
+*/
+
+//Q16
+/*
+let anoNasc = Number(prompt('Em qual ano você nasceu?'))
+const anoAtual = 2023
+
+if ((anoAtual - anoNasc) >= 16) {
+    console.log('Você pode votar esse ano!')
+} else {
+    console.log('Você ainda não pode votar!');
+}
+*/
+
+//Q17
+/*
+let eleitores = Number(prompt('Digite o valor de eleitores: '))
+let votosValidos = Number(prompt('Digite o valor de votos válidos: '))
+let votosBrancos = Number(prompt('Digite o valor de votos brancos: '))
+let votosNulos = Number(prompt('Digite o valor de votos nulos: '))
+
+if ((votosBrancos + votosNulos + votosValidos) <= eleitores) {
+    const xValidos = (votosValidos / eleitores) * 100
+    const xBrancos = (votosBrancos / eleitores) * 100
+    const xNulos = (votosNulos / eleitores) * 100
+    console.log(`
+        Porcentagem de votos válidos: ${xValidos.toFixed(2)}% <br>
+        Porcentagem de votos brancos: ${xBrancos.toFixed(2)}% <br>
+        Porcentagem de votos nulos: ${xNulos.toFixed(2)}%
+    `)
+} else (
+    console.log('ERRO')
+)
+*/
+
+//Q18
+/*
+let precoTabela = Number(prompt('Valor Produto: '))
+let parcelas = Number(prompt('Forma de Pagamento: 0 - A VISTA; 1 - PARCELADO'))
+let precoFinal = 0
+
+if(parcelas === 0) {
+
+    precoFinal = 0.975 * precoTabela
+    console.log(`Preço Total R$${precoFinal}`)
+
+} else if(parcelas === 1) {
+
+    let numParcelas = Number(prompt('Quantidade de parcelas: '))
+    if (numParcelas >= 2 && numParcelas <= 5) {
+        
+        precoFinal = precoTabela
+        console.log(`${numParcelas}x de R$${precoFinal / numParcelas}; total de R$${precoFinal}`)
+        
+    } else if(numParcelas >= 6 && numParcelas <= 10) {
+        
+        precoFinal = 1.06 * precoTabela
+        console.log(`${numParcelas}x de R$${precoFinal / numParcelas}; total de R$${precoFinal}`)
+
+    } else if(numParcelas >= 11 && numParcelas <=15) {
+
+        precoFinal = 1.13 * precoTabela
+        console.log(`${numParcelas}x de R$${precoFinal / numParcelas}; total de R$${precoFinal}`)
+
+    } else {
+        console.log('Número de parcelas inválido.')
+    }
+} else {
+    console.log('Forma de pagamento inválida.');
+}
+*/
