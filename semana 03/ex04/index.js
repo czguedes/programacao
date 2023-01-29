@@ -1,15 +1,4 @@
-/*
-1. Desenvolva um algoritmo que leia a altura de 15 pessoas. Este
-programa deverá calcular e mostrar:
-a. A menor altura do grupo;
-b. A maior altura do grupo;
-
--ler o dado
--ler um segundo dado
--comparar com o anterior
--se o novo dado for maior/menor que o anterior, substituir
--repetir até terminar os dados
-*/
+/*Q01*/
 
 // const alturas = [1.70, 1.85, 1.35, 1.24, 1.55, 1.76, 1.90, 1.42, 1.33, 1.50, 1.41, 1.37, 1.72, 1.79, 1.67];
 
@@ -30,15 +19,8 @@ b. A maior altura do grupo;
 // console.log(`A menor altura do grupo é ${menorAltura}m e a maior é ${maiorAltura}m.`)
 
 console.log('-------------FIM------------------')
-/*
-2. Pedro tem 1,50m de altura e cresce 2 centímetros por ano, enquanto
-Lucas tem 1,10m de altura e cresce 3 centímetros por ano.
-Construa um algoritmo que calcule e imprima quantos anos serão
-necessários para que:
-a. Lucas e Pedro tenham o mesmo tamanho;
-b. Lucas seja maior que Pedro.
 
-*/
+/*Q02*/
 // let alturaPedro = 1.50
 // let alturaLucas = 1.10
 // let anos = 0
@@ -54,28 +36,7 @@ b. Lucas seja maior que Pedro.
 
 console.log('-------------FIM------------------')
 
-/*
-3. Escreva um algoritmo que faça a tabuada de um número e
-apresente o resultado de acordo com o modelo a seguir, sabendo
-que o multiplicando deverá ser fornecido pelo usuário (n) e a
-quantidade de iterações também (i).
-1 * 2 = 2
-2 * 2 = 4
-3 * 2 = 6
-...
-
----
-receber o valor da tabuada
-receber o numero de iterações
-iniciar em 0
-
-calcular a tabuada:
-    iteracao * valor da tabuada = resultado
-    repetir até o valor da iteração final (contador)
-
-mostrar tabuada completa (console.log resultado)
-
-*/
+/*Q03*/
 // let multValor = Number(prompt('Digite o valor da tabuada:'))
 // let iteracao = Number(prompt('Digite o intervalo final para a tabuada:'))
 
@@ -85,16 +46,8 @@ mostrar tabuada completa (console.log resultado)
 
 // }
 console.log('-------------FIM------------------')
-/*
-4. Escreva um algoritmo que percorra os números inteiros entre 1 e 250
-e verifique quais números são múltiplos de 3 e quais são múltiplos
-de 5.
 
----
-contar de 1 a 250
-mostrar números multiplos de 3 e 5
-
-*/
+/*Q04*/
 
 // let contador = 1
 // let mult3 = 0
@@ -112,13 +65,8 @@ mostrar números multiplos de 3 e 5
 // console.log(`No intervalo de 1 a 250 existem ${mult3} múltiplos de 3 e ${mult5} múltiplos de 5.`)
 
 console.log('-------------FIM------------------')
-/*
-5. Faça um programa usando a estrutura “for” que leia um número
-inteiro positivo e mostre na tela uma contagem de 0 até o valor
-digitado:
-Ex: Digite um valor: 9
-Contagem: 0, 1, 2, 3, 4, 5, 6, 7, 8, 9, FIM!
-*/
+
+/*Q05*/
 // const valorFinal = Number(prompt(`Insira um valor:`))
 
 // for (let index = 0; index <= valorFinal; index++) {
@@ -127,36 +75,56 @@ Contagem: 0, 1, 2, 3, 4, 5, 6, 7, 8, 9, FIM!
 // }
 
 console.log('-------------FIM------------------')
-/*
-6. Desenvolva um algoritmo que mostre uma contagem regressiva de
-30 até 1, marcando os números que forem primos, exatamente
-como mostrado abaixo:
-30 [29] 28 27 26 25 24 [23] 22 21 20 [19] 18 [17] 16...
 
-numero primo => só é divisível (resto 0) por 1 e por ele mesmo
+/*Q06*/
+let divisor
 
-fazer um lista dessa contagem (30 até 1)
-provar a condicaoPrimo de cada um deles
-    condicaoPrimo = n % n-1 == 0 
-    se condicaoPrimo = false => não conta divisor
-    se condicaoPrimo = true => conta divisor
-se n tiver divisor == 2 => primo, logo imprime ['']
-se n tiver divisor != 2 => não-primo, logo imprime ''
-*/
+for(let i = 30; i >= 1; i--) { //conta de 30 a 1
+
+    for(let cont = 30; cont >= 1; cont--) { //conta de 30 a 1
+        
+        if(i % cont === 0) { //divide o n externo pelo interno
+            divisor++ //soma +1 no divisor
+        }
+    }
+    
+    if(divisor === 2) { //define se é primo ou não
+        console.log(`[${i}]`);
+    } else {
+        console.log(`${i}`);
+        divisor = 0 //reseta o divisor
+    }
+}
 
 console.log('-------------FIM------------------')
-/*
-7. Desenvolva um algoritmo que leia 10 números, calcule e escreva a
-média aritmética dos valores lidos, a quantidade de valores
-positivos, a quantidade de valores negativos e o percentual de
-valores negativos e positivos.
-*/
 
-let contador = 0
-do {
-    let valorDigitado = Number(prompt('Digite um valor numérico: '))
+/*Q07*/
+let soma = 0
+let numEscritos = ""
+let numPositivo = 0
+let numNegativo = 0
 
-    contador++
-} while (contador <= 10);
+for(i = 0; i < 10; i++) {
+    let numDigitado = Number(prompt('Digite um valor: '))
+    soma += numDigitado
+    numEscritos += ` ${numDigitado}`
+    
+    if(numDigitado > 0) {
+        numPositivo++
+    }
+    if(numDigitado < 0){
+        numNegativo++
+    }
+}
+let media = (soma / 10).toFixed(2)
+let xPositivos = (numPositivo / 10) * 100
+let xNegativos = (numNegativo / 10) * 100
+
+document.write(`
+    Números Digitados: ${numEscritos} <br>
+    Média: ${media} <br>
+    Qte. números positivos: ${numPositivo}; % positivos: ${xPositivos} <br>
+    Qte. números negativos: ${numNegativo}; % negativos: ${xNegativos}
+`)
 
 console.log('-------------FIM------------------')
