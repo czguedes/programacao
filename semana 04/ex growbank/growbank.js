@@ -46,16 +46,17 @@ let saldo, vlr, saque, desc=true, op;
 
 saldo = Number(prompt("Bem vindo(a) ao Growbank!! Faça um primeiro depósito: "))
 
-if(isNaN(saldo) || saldo < 0) {
-    while (isNaN(saldo) || saldo < 0) {
+if(isNaN(saldo) || saldo <= 0) {
+    while (isNaN(saldo) || saldo <= 0) {
         saldo = Number(window.prompt('O valor inserido é inválido! Por favor, insira um valor válido: '))    
     }
 }
 
 while (desc){
    
-    window.alert(`Seu saldo é de R$${saldo}!`)
-    op = Number(window.prompt(`Informe o número da operação deseja fazer:
+    op = Number(window.prompt(`
+    Seu saldo é de R$${saldo.toFixed(2)}!
+    Informe o número da operação deseja fazer:
 
     1 - Depósito
     2 - Saque
@@ -65,18 +66,20 @@ while (desc){
     switch (op) {
         
         case 0:
+
+            alert('Obrigado por usar nossos serviços! Growbank agradece a preferência!');
             desc = false
              
-            break
+        break;
             
         case 1:
             vlr = Number(window.prompt("Informe o valor a ser depositado: "));
 
-            if(isNaN(vlr) || vlr < 0){
+            if(isNaN(vlr) || vlr <= 0){
                 
-                while (isNaN(vlr) || vlr < 0) {
+                while (isNaN(vlr) || vlr <= 0) {
 
-                    vlr = Number(window.prompt("Valor informado é inválido, Informe outro valor para o depósito: R$ "));
+                    vlr = Number(window.prompt("Valor informado é inválido, Informe outro valor para o depósito: "));
 
                 }
             }
@@ -85,57 +88,47 @@ while (desc){
 
             alert("Deposito realizado com sucesso!");
 
-            break;
+        break;
             
         case 2:
             
-            saque = Number(window.prompt("Informe o valor do saque: R$ "));
-            console.log(saque);
+            saque = Number(window.prompt("Informe o valor do saque: "));
             
-            if(isNaN(saque) || saque < 0){
+            if(saque > saldo || isNaN(saque) || saque <= 0){
                 
-                while (isNaN(saque) || saque < 0) {
+                while (saque > saldo || isNaN(saque) || saque <= 0) {
 
-                    saque = Number(window.prompt("Valor informado é inválido, Informe outro valor para o saque: R$ "));
+                    saque = Number(window.prompt("Valor informado é inválido, Informe outro valor para o saque: "));
 
                 }
             }
 
-            if(saque > saldo) {
-
-                while (saque > saldo){
-
-                    saque = Number(window.prompt(`Saldo disponivel R$ ${saldo.toFixed(2)}.
-                    Valor do saque informado é maior que o saldo disponível,
-                    informe um valor menor que o saldo para o saque: R$ `))
-                }
-            } else {
-                saldo -= saque;
-            }
+            saldo -= saque;
+            
 
             alert(`Saque realizado com sucesso, seu saldo atual é R$ ${saldo.toFixed(2)}`);
             
                 
-            break;
+        break;
             
         case 3:
-            let saque = Number(prompt('Qual é o valor da transferência?'));
-            const email = prompt('Digite o email de quem vai receber o valor');
+            saque = Number(prompt('Qual é o valor da transferência?'));
+
             
             while (saque <= 0 || saque > saldo || isNaN(saque)) {
-                saque = Number(prompt(`
-                Valor indisponível, digite um valor maior que 0 ou menor que o seu saldo`));
+                saque = Number(prompt(`Valor indisponível, digite um valor maior que 0 ou menor que o seu saldo`));
             }
+
+            const email = prompt('Digite o email de quem vai receber o valor');
             saldo -= saque;
 
-            alert(`Você transferiu R${saque}, para ${email}. Seu saldo atual é: ${saldo}`)
+            alert(`Você transferiu R$${saque} para ${email}. Seu saldo atual é: R$${saldo}`)
+
         break;
 
         default:
-            window.prompt('Entrada inválida!')
-            break;
+            alert('Entrada inválida!')
+        break;
     }
-   
-            
-          
 }
+document.write('FIM DO PROGRAMA')
