@@ -75,7 +75,25 @@ function questao04(){
     dataCompleta(entrada)
 }
 
-function questao05(){}
+function questao05(){
+    function valorInteiro() {
+        
+        let soma = 0
+        for (let index = 1; index < num; index++) {
+            if (num % index === 0) {
+                soma += index
+            }
+        }
+        if (soma === num){
+            return true
+        } else {
+            return false
+        }
+    }
+    
+    let num = Number(prompt('Digite um número inteiro: '))
+    alert(valorInteiro(num))
+}
 
 function questao06(){
 
@@ -107,4 +125,14 @@ function questao08(){
     alert(`O dobro de ${num} é ${mostrarDobro(num)}`)
 }
 
-function questao09(){}
+function questao09(){
+    
+    function calcularMedia(nota1, nota2, nota3, nome){
+        let media = (nota1 + nota2 + nota3)/3
+        console.log(`Nota 1: ${nota1}, nota 2: ${nota2}, nota 3: ${nota3}.`)
+        return media
+
+    }
+    
+    alert(calcularMedia(7, 8, 4, 'João'))
+}
