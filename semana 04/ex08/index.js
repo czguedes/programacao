@@ -134,5 +134,5 @@ function questao09(){
 
     }
     
-    alert(calcularMedia(7, 8, 4, 'João'))
+    alert(`João, sua média é ${calcularMedia(7, 8, 4, 'João')}`)
 }
