@@ -80,7 +80,9 @@ function questao05(){
             
             if(numEntrada === listaCompleta[index]){
                 return true
-            } else{return false}
+            }
+            
+            return false
             
         }
     }
@@ -100,5 +102,5 @@ function questao06(){
     } while (nomesLista.length < 5)
 
     console.log(nomesLista)
-    console.log(nomesLista.reverse(nomesLista))
+    console.log(nomesLista.reverse())
 }
