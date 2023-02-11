@@ -86,8 +86,46 @@ function questao04() {
             return index.skills.includes(`${skill}`)
 
         })
-        console.log(`Além do aluno ${aluno}, possuem a skill ${skill} os seguintes alunos: `, alunosFiltro);
+        console.log(`Possuem a skill ${skill} os seguintes alunos: `, alunosFiltro);
     }
 
-    selecaoAlunos('Caio','Javascript')
+    selecaoAlunos(alunos,'Javascript')
+}
+
+function questao05() {
+    
+    let continuar = true
+    const desempregados = []
+    const empregadasMais = []
+    const empregadasMenos = []
+
+    do {
+        
+        const cadastro = {
+            nome: prompt('Qual seu nome?'),
+            idade: Number(prompt('Qual sua idade?')),
+            emprego: Number(prompt('Você está empregado? 1 - SIM; 0 - NÃO')),
+            salario: 0
+        }
+
+        if (cadastro.emprego === 1){
+            cadastro.salario = Number(prompt('Qual seu salário?'))
+        } else {
+            desempregados.push(cadastro)
+        }
+
+        if(cadastro.salario >= 2500 && cadastro.emprego === 1) {
+            empregadasMais.push(cadastro)
+        }
+
+        if(cadastro.salario < 2500 && cadastro.emprego === 1) {
+            empregadasMenos.push(cadastro)
+        }
+
+        continuar = confirm('Deseja continuar?')
+    } while (continuar);
+
+    console.log(`Pessoas desempregadas: `, desempregados);
+    console.log(`Pessoas empregadas com salário superior a 2500`, empregadasMais);
+    console.log(`Pessoas empregadas com salário inferior a 2500`, empregadasMenos);
 }
