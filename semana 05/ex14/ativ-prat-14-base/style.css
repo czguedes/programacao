@@ -27,3 +27,37 @@ body {
   border-radius: 30px;
   box-shadow: 1px 2px 5px 1px rgba(0, 0, 0, 0.68);
 }
+
+.descricao-card {
+  color: white;
+  font-size: 15px;
+  padding: 40px 0px;
+}
+
+.botao-editar {
+  color: #fff;
+  font-weight: 400;
+  text-align: center;
+  line-height: 1.5;
+  vertical-align: middle;
+  border-radius: 8px;
+  font-size: 1rem;
+  padding: 5px;
+  background-color: #007a00;
+  border-color: #007a00;
+  cursor: pointer;
+}
+
+.botao-apagar {
+  color: #fff;
+  font-weight: 400;
+  text-align: center;
+  line-height: 1.5;
+  vertical-align: middle;
+  border-radius: 8px;
+  font-size: 1rem;
+  padding: 5px;
+  background-color: #ff0000;
+  border-color: #ff0000;
+  cursor: pointer;
+}
