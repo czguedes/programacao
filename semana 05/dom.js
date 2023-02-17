@@ -3,7 +3,7 @@ let lampadaQuebrada = false
 function acenderLampada(){
     if(!lampadaQuebrada){
         const lampada = document.getElementById('lampada')
-        lampada.src = './imagens/lampada_acesa.jpg'
+        lampada.src = './imagens/lampada_acesa.jpg' //muda a propriedade src do <img>
     }
 }
 
@@ -28,7 +28,7 @@ function quebraLampada(){
     
         //2. adiciona elemento
         const divContainer = document.querySelector('.container') //seleciona o div.container como local para adicionar o botão
-        divContainer.appendChild(botaoTrocar) //insere botão
+        divContainer.appendChild(botaoTrocar) //insere botão como filho do .container
     }
 }
 

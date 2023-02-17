@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Formulários</title>
+</head>
+<body>
+    <h1>Cadastro de Devs</h1>
+<!-- 
+    #Dados Pessoais
+    Nome,
+    Data de nascimento,
+    E-mail,
+    Telefone,
+    Endereço,
+    Pretensão salarial
+
+    #Conhecimentos
+    Área de atuação: frontend, backend, fullstack
+    Senioridade: Jr, pleno, sênior
+    Tecnologias: js, c#, html, css, node.js, react.js
+    Experiências: texto livre
+    Anexar currículo
+    -->
+
+    <form id="formulario-cadastro" onsubmit="cadastro(event)">
+        <fieldset>
+            <legend>Dados Pessoais</legend>
+            <label for="nomeCompleto">Nome Completo: </label>
+            <input type="text" placeholder="Nome" id="nomeCompleto" name="nomeCompleto">
+            
+            <br><br>
+            
+            <label for="dataNasc">Data de Nascimento: </label>
+            <input type="date" id="dataNasc" name="dataNasc">
+            
+            <br><br>
+
+            <label for="emailUsuario">Email: </label>
+            <input type="email" name="emailUsuario" id="emailUsuario" placeholder="email@email.com">
+
+            <br><br>
+
+            <label for="telefoneUsuario">Telefone: </label>
+            <input type="tel" name="telefoneUsuario" id="telefoneUsuario" placeholder="99 99999 9999">
+
+            <br><br>
+
+            <label for="enderecoUsuario">Endereço: </label>
+            <input type="text" name="enderecoUsuario" id="enderecoUsuario" placeholder="Rua X, 99, Cidade/UF">
+
+            <br><br>
+
+            <label for="pretSalario">Pretensão Salarial: </label>
+            <input type="number" name="pretSalario" id="pretSalario" placeholder="999.99">
+        </fieldset>
+
+        <br> 
+
+        <fieldset>
+            <legend>Informações Profissionais</legend>
+
+            <label for="areaAtuacao">Área de atuação</label> <br>
+            <input type="radio" name="areaAtuacao" id="frontend" value="frontend">
+            <label for="areaAtuaco">Front-End</label>
+            <br>
+            <input type="radio" name="areaAtuacao" id="backend" value="backend">
+            <label for="areaAtuaco">Back-End</label>
+            <br>
+            <input type="radio" name="areaAtuacao" id="fullstack" value="fullstack">
+            <label for="areaAtuaco">FullStack</label>
+
+            <br><br>
+
+            <label for="seniorUsuario">Senioridade: </label>
+            <select name="seniorUsuario" id="seniorUsuario">
+                <option value="selectUser" disabled selected>Selecione...</option>
+                <option value="junior">Junior</option>
+                <option value="pleno">Pleno</option>
+                <option value="senior">Senior</option>
+            </select>
+             
+            <br><br>
+
+            <label for="techUsuario">Tecnologias: </label> <br>
+
+            <input type="checkbox" name="techUsuario" id="html" value="html">
+            <label for="html">HTML</label>
+
+            <input type="checkbox" name="techUsuario" id="css" value="css">
+            <label for="css">CSS</label>
+            
+            <input type="checkbox" name="techUsuario" id="javascript" value="javascript">
+            <label for="javascript">JavaScript</label>
+            
+            <input type="checkbox" name="techUsuario" id="mysql" value="mysql">
+            <label for="mysql">MySQL</label>
+            
+            <input type="checkbox" name="techUsuario" id="react" value="react">
+            <label for="react">React</label>
+            
+            <input type="checkbox" name="techUsuario" id="csharp" value="csharp">
+            <label for="csharp">C#</label>
+            
+            <input type="checkbox" name="techUsuario" id="java" value="java">
+            <label for="java">Java</label>
+
+            <br><br>
+
+            <label for="experienciaUsuario">Experiências: </label><br>
+            <textarea name="experienciaUsuario" id="experienciaUsuario" cols="30" rows="10"></textarea>
+
+            <br><br>
+
+            <label for="curriculo">Anexe seu currículo: </label><br>
+            <input type="file" name="curriculo" id="curriculo" accept=".pdf, .doc, .jpg">
+        </fieldset>
+        <br><br>
+        <button type="submit">Cadastrar</button> <!-- O mesmo efeito mas o button pode receber outros elementos html -->
+    </form>
+
+
+    <script src="formularios.js"></script>
+</body>
+</html>
