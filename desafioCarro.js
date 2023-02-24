@@ -58,7 +58,7 @@ function cadastro() {
 }
 
 function gerarId() {
-    return veiculos.length + 1;
+    return veiculos.length + 1; //trocar método de gerar id
 }
 
 function listarVeiculos(){
@@ -121,14 +121,9 @@ function removerVeiculo() {
 
     if (filtrado) {
         veiculos.splice(id - 1, 1);
+        alert()
     } else {
-        alert('Veiculo não encontrado');
+        alert('Veiculo não encontrado!');
         return
     }
 }
-
-
-
-
-
-
