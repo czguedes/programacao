@@ -8,23 +8,9 @@
 </head>
 <body>
     <h1>Cadastro de Devs</h1>
-<!-- 
-    #Dados Pessoais
-    Nome,
-    Data de nascimento,
-    E-mail,
-    Telefone,
-    Endereço,
-    Pretensão salarial
-
-    #Conhecimentos
-    Área de atuação: frontend, backend, fullstack
-    Senioridade: Jr, pleno, sênior
-    Tecnologias: js, c#, html, css, node.js, react.js
-    Experiências: texto livre
-    Anexar currículo
-    -->
-
+    <input type="button" value="Ver lista" onclick="verLista()">
+    
+    
     <form id="formulario-cadastro" onsubmit="cadastro(event)">
         <fieldset>
             <legend>Dados Pessoais</legend>
@@ -120,7 +106,7 @@
         <br><br>
         <button type="submit">Cadastrar</button> <!-- O mesmo efeito mas o button pode receber outros elementos html -->
     </form>
-
+    
 
     <script src="formularios.js"></script>
 </body>
